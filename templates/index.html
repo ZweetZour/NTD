@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Lista de Tareas - MVC</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Gestor de Tareas</h1>
+
+        <p class="subtitle">
+            Aplicación MVC desarrollada con Flask
+        </p>
+
+
+        <!-- =================================
+             FORMULARIO PARA AGREGAR
+        ================================== -->
+
+        <form
+            action="{{ url_for('add_task') }}"
+            method="POST"
+            class="add-form"
+        >
+
+            <input
+                type="text"
+                name="task"
+                placeholder="Escribe una nueva tarea..."
+                required
+            >
+
+            <button type="submit">
+                Agregar
+            </button>
+
+        </form>
+
+
+        <!-- =================================
+             LISTA DE TAREAS
+        ================================== -->
+
+        <h2>Mis tareas</h2>
+
+
+        {% if tasks %}
+
+            <ul class="task-list">
+
+                {% for task in tasks %}
+
+                    <li class="task">
+
+                        <span>
+                            {{ loop.index }}. {{ task }}
+                        </span>
+
+
+                        <form
+                            action="{{ url_for('delete_task', index=loop.index0) }}"
+                            method="POST"
+                        >
+
+                            <button
+                                type="submit"
+                                class="delete-button"
+                            >
+                                Eliminar
+                            </button>
+
+                        </form>
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% else %}
+
+            <p class="empty">
+                No hay tareas todavía.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
