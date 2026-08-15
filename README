@@ -21,6 +21,4 @@ python to-do.py
 git init git branch -M main git branch
 
 8. Conectar el proyecto con GitHub
-git remote add origin https://github.com/Daniel2007-Gnz/Prueba-Pagina-lancer.git
-
-9. Evidencia
+git remote add origin https://github.com/ZweetZour/NTD.git
