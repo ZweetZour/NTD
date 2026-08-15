@@ -1,0 +1,26 @@
+Prueba-Pagina-tareas
+1. Crear el entorno virtual
+python -m venv .env
+
+2. Activar el entorno virtual entorno virtual
+..env\Scripts\activate
+
+3.Instalar el flask
+python -m pip install
+
+4. Crear requierements.txt
+pip freeze > requirements.txt
+
+5. Instalar requirements.txt
+pip install -r requirements.txt
+
+6. Ejecutar proyecto
+python to-do.py
+
+7. Iniciar Git
+git init git branch -M main git branch
+
+8. Conectar el proyecto con GitHub
+git remote add origin https://github.com/Daniel2007-Gnz/Prueba-Pagina-lancer.git
+
+9. Evidencia
